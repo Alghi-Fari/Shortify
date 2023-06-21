@@ -43,6 +43,6 @@ class RegisterController extends Controller
             'user_id'   => $user->id,
         ]);
 
-        return redirect('/login')->back()->with('success', 'Account created successfully.');
+        return redirect('/login')->with('success', 'Account created successfully.');
     }
 }

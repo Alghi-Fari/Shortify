@@ -9,9 +9,12 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\RegisterController;
 
+
+
 Route::middleware('guest')->group(function () {
     Route::get('login', [LoginController::class, 'index'])
         ->name('login');
+
     Route::post('login', [LoginController::class, 'store']);
 });
 

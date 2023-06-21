@@ -10,4 +10,10 @@ class Link extends Model
     use HasFactory;
 
     protected $table = 'links';
+
+    protected $fillable = [
+        'original_link',
+        'shorted_link',
+        'user_id',
+    ];
 }
