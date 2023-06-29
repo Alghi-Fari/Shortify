@@ -29,47 +29,49 @@
         <div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
             <div class="container">
                 <div class="row mb-2">
-                    <div class="col-12 mb-4">
-                        <img src="https://dummyimage.com/200x100/d4d4d4/ffffff" alt="" class="mx-auto d-block">
+                    <div class="col-12 mb-1">
+                        {{-- <img src="https://dummyimage.com/200x100/d4d4d4/ffffff" alt="" class="mx-auto d-block"> --}}
                     </div>
                 </div>
                 <div class="row align-items-center justify-content-center align-middle">
                     <div class="col-md-6 col-lg-5">
-                        <div class="login-box bg-white box-shadow border-radius-10">
+                        <div class="login-box bg-white box-shadow border-radius-10 shadow">
                             <div class="login-title">
+                                <img src="{{asset('storage/image/Logo.png')}}" alt="" class="mx-auto d-block" width="400px">
+                                <br>
                                 <h2 class="text-center text-primary">Create New Account</h2>
                             </div>
                             <form method="POST" action="{{ route('register.store') }}">
                                 @csrf
                                 <label>Email</label>
                                 <div class="input-group custom">
-                                    <input type="email" class="form-control form-control-lg" placeholder="Email"
-                                        name="email" />
+                                    <input type="email" class="form-control form-control-lg"
+                                        name="email" required/>
                                     <div class="input-group-append custom">
                                         <span class="input-group-text"><i class="icon-copy dw dw-email"></i></span>
                                     </div>
                                 </div>
                                 <label>Username</label>
                                 <div class="input-group custom">
-                                    <input type="text" class="form-control form-control-lg" placeholder="Username"
-                                        name="username" />
+                                    <input type="text" class="form-control form-control-lg"
+                                        name="username" required/>
                                     <div class="input-group-append custom">
                                         <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
                                     </div>
                                 </div>
                                 <label>Password</label>
                                 <div class="input-group custom">
-                                    <input type="password" class="form-control form-control-lg" placeholder="Password"
-                                        name="password" />
+                                    <input type="password" class="form-control form-control-lg" name="password" id="password" required/>
                                     <div class="input-group-append custom">
+                                        <span class="input-group-text"><button type="button" id="togglePassword" class="border-0 bg-transparent"><i class="fa-regular fa-eye-slash"></i></button></span>
                                         <span class="input-group-text"><i class="dw dw-padlock1"></i></span>
                                     </div>
                                 </div>
                                 <label>Password Confirmation</label>
                                 <div class="input-group custom">
-                                    <input type="password" class="form-control form-control-lg"
-                                        placeholder="Password Confirmation" name="password_confirmation" />
+                                    <input type="password" class="form-control form-control-lg" name="password_confirmation" id="password2" required/>
                                     <div class="input-group-append custom">
+                                        <span class="input-group-text"><button type="button" id="togglePassword2" class="border-0 bg-transparent"><i class="fa-regular fa-eye-slash"></i></button></span>
                                         <span class="input-group-text"><i class="dw dw-padlock1"></i></span>
                                     </div>
                                 </div>
@@ -92,8 +94,7 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label>&nbsp;</label>
-                                            <input type="text" class="form-control" placeholder="Answer"
-                                                name="answer" />
+                                            <input type="text" class="form-control" placeholder="Answer" name="answer" required/>
                                         </div>
                                     </div>
                                 </div>
@@ -117,4 +118,38 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            $('#togglePassword').click(function() {
+                var passwordField = $('#password');
+                var passwordFieldType = passwordField.attr('type');
+
+            // Toggle password field type
+            if (passwordFieldType === 'password') {
+                passwordField.attr('type', 'text');
+                $(this).html('<i class="fa-regular fa-eye"></i>');
+            } else {
+                passwordField.attr('type', 'password');
+                $(this).html('<i class="fa-regular fa-eye-slash"></i>');
+            }
+            });
+        });
+
+        $(document).ready(function() {
+            $('#togglePassword2').click(function() {
+                var passwordField = $('#password2');
+                var passwordFieldType = passwordField.attr('type');
+
+            // Toggle password field type
+            if (passwordFieldType === 'password') {
+                passwordField.attr('type', 'text');
+                $(this).html('<i class="fa-regular fa-eye"></i>');
+            } else {
+                passwordField.attr('type', 'password');
+                $(this).html('<i class="fa-regular fa-eye-slash"></i>');
+            }
+            });
+        });
+        </script>
 @endsection

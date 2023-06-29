@@ -5,20 +5,22 @@
             <div class="container">
                 <div class="row mb-2">
                     <div class="col-12 mb-4">
-                        <img src="https://dummyimage.com/200x100/d4d4d4/ffffff" alt="" class="mx-auto d-block">
+                        {{-- <img src="https://dummyimage.com/200x100/d4d4d4/ffffff" alt="" class="mx-auto d-block"> --}}
                     </div>
                 </div>
                 <div class="row align-items-center justify-content-center align-middle">
                     <div class="col-md-6 col-lg-5">
-                        <div class="login-box bg-white box-shadow border-radius-10">
+                        <div class="login-box bg-white box-shadow border-radius-10 shadow">
                             <div class="login-title">
+                                <img src="{{asset('storage/image/Logo.png')}}" alt="" class="mx-auto d-block" width="400px">
+                                <br>
                                 <h2 class="text-center text-primary">Forgot Password</h2>
                             </div>
                             <form method="POST" action="{{ route('password.store') }}">
                                 @csrf
                                 <label>Email</label>
                                 <div class="input-group custom">
-                                    <input type="text" class="form-control form-control-lg" placeholder="Email"
+                                    <input type="text" class="form-control form-control-lg" 
                                         name="email" />
                                     <div class="input-group-append custom">
                                         <span class="input-group-text"><i class="icon-copy dw dw-email"></i></span>

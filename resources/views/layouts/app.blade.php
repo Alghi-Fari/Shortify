@@ -26,7 +26,7 @@
         href="{{ asset('assets/src/plugins/datatables/css/responsive.bootstrap4.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/styles/style.css') }}" />
     @yield('css')
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"></script>
     <script>
@@ -56,9 +56,15 @@
         })(window, document, "script", "dataLayer", "GTM-NXZMQSS");
     </script>
     <!-- End Google Tag Manager -->
+    <style>
+        .background-image {
+        background-image: url('{{asset('storage/image/background.jpg')}}');
+        background-size: cover; /* Adjust this property to control how the image is displayed */
+    }
+    </style>
 </head>
 
-<body>
+<body class="background-image">
     <div class="pre-loader">
         <div class="pre-loader-box">
             <div class="loader-progress" id="progress_div">

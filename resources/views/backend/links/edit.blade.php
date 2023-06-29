@@ -2,7 +2,7 @@
 @section('content')
     <div class="row mt-4">
         <div class="col-md-12 col-sm-12 ">
-            <div class="card-box mb-30">
+            <div class="card-box mb-30 shadow">
                 <div class="pd-20">
                     <form action="{{ route('app.link.update', $link->id) }}" method="POST">
                         @method('PUT')
@@ -14,7 +14,7 @@
                                 <div class="input-group mb-0">
                                     <input type="text" class="form-control number-input" name="link[destination]"
                                         placeholder="https://example.com/my-long-url" required
-                                        value="{{ $link->original_link }}">
+                                        value="{{ $link->original_link }}" disabled>
                                 </div>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                                     </label>
                                     <div class="col-11">
                                         <input type="text" class="form-control" name="link[shorted]" placeholder=""
-                                            value="{{ $link->shorted_link }}" disabled>
+                                            value="{{ $link->shorted_link }}">
                                     </div>
                                 </div>
                             </div>

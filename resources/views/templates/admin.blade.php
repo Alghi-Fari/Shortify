@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
     <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/styles/core.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/styles/icon-font.min.css') }}" />
     <link rel="stylesheet" type="text/css"
@@ -52,9 +53,52 @@
         })(window, document, "script", "dataLayer", "GTM-NXZMQSS");
     </script>
     <!-- End Google Tag Manager -->
+    <style>
+        .background-image {
+        background-image: url('{{asset('storage/image/background.jpg')}}');
+        background-size: cover; /* Adjust this property to control how the image is displayed */
+        }
+        .tooltip {
+        position: relative;
+        display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 140px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -75px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        }
+
+        .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+        }
+    </style>
 </head>
 
-<body>
+<body class="background-image">
     {{-- <div class="pre-loader">
         <div class="pre-loader-box">
             <div class="loader-progress" id="progress_div">
@@ -68,13 +112,12 @@
 
     @include('components.header')
 
-    <div class="container mt-3">
-
+    <div class="container mt-5">
         @yield('content')
     </div>
 
-
     <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('assets/vendors/scripts/core.js') }}"></script>
     <script src="{{ asset('assets/vendors/scripts/script.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/scripts/process.js') }}"></script>
