@@ -81,6 +81,12 @@ class LinkController extends Controller
             if (in_array($shorted_link, $existed_link)) {
                 return redirect()->back()->with('errors', "Please retry!");
             } else {
+                $original_link = Link::pluck('original_link')->toArray();
+
+                //Digunakan untuk mengecek redudansi Original Link
+                if (in_array($request->link['destination'], $original_link)) {
+                    return redirect()->back()->with('errors', "Link already been created");
+                }
                 $link = Link::create([
                     'original_link' => $request->link['destination'],
                     'shorted_link'  => $shorted_link,
