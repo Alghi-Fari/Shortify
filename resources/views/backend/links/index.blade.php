@@ -13,7 +13,8 @@
                                         {{-- Digunakan untuk menampilkan Shortlink dan kapan dibuatnya --}}
                                         {{-- <td scope="col" width="5%">{{ $loop->iteration }}</td> nanti ganti menjadi icon --}}
                                         <td scope="col" width="10%">
-                                            <img src="{{asset('storage/image/icon.png')}}" alt="Icon Diamond" width="50" height="50">
+                                            {{-- <img src="{{asset('storage/image/icon.png')}}" alt="Icon Diamond" width="50" height="50px"> --}}
+                                            <img src="{{ asset('assets/images/icon.png') }}" alt="Icon Diamond" width="50px" height="50px"/>
                                         </td>
                                         <td>
                                             <a class='text-primary' href='/{{ $link->shorted_link }}'

@@ -55,7 +55,7 @@
     <!-- End Google Tag Manager -->
     <style>
         .background-image {
-        background-image: url('{{asset('storage/image/background.jpg')}}');
+        background-image: url('{{asset('assets/images/background.jpg')}}');
         background-size: cover; /* Adjust this property to control how the image is displayed */
         }
         .tooltip {

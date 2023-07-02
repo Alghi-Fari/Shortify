@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm bg-body-tertiary rounded">
-    <img src="{{asset('storage/image/Logo.png')}}" alt="Logo" width="200" height="100">
+    {{-- <img src="{{asset('storage/image/Logo.png')}}" alt="Logo" width="200" height="100"> --}}
+    <img src="{{ asset('assets/images/Logo.png') }}" alt="Foto Logo" width="200px" height="100"/>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -40,7 +41,8 @@
                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                     
                     <span class="user-icon shadow-none">
-                        <img src="{{ asset('storage/image/user.png') }}" alt="" />
+                        {{-- <img src="{{ asset('storage/image/user.png') }}" alt="" /> --}}
+                        <img src="{{ asset('assets/images/user.png') }}" alt="Foto Logo"/>
                     </span>
                     <span class="user-name">User</span>
                 </a>

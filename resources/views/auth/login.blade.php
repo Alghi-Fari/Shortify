@@ -23,7 +23,8 @@
                     <div class="col-md-4 col-lg-5">
                         <div class="login-box bg-white box-shadow border-radius-10 shadow">
                             <div class="login-title">
-                                <img src="{{asset('storage/image/Logo.png')}}" alt="" class="mx-auto d-block" width="400px">
+                                {{-- <img src="{{asset('storage/image/Logo.png')}}" alt="" class="mx-auto d-block" width="400px"> --}}
+                                <img src="{{ asset('assets/images/Logo.png') }}" alt="Foto Logo" class="mx-auto d-block" width="400px"/>
                                 <br>
                                 <h2 class="text-center text-primary">Sign In To Your Account</h2>
                             </div>

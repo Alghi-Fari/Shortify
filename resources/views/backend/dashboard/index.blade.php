@@ -12,7 +12,8 @@
                         @endguest
                         @csrf
                         @method('POST')
-                        <img src="{{asset('storage/image/Logo2.png')}}" alt="Logo">
+                        <img src="{{ asset('assets/images/Logo2.png') }}" alt="Foto Logo"/>
+                        {{-- <img src="{{asset('storage/image/Logo2.png')}}" alt="Logo"> --}}
                         <br>
                         <h3 class="text-center mt-4 mb-4">"Link Simpler, Reach Faster"</h3>
                         <div class="input-group mb-3 h-100">
