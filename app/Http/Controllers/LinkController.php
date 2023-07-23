@@ -41,7 +41,7 @@ class LinkController extends Controller
 
 
         $existed_link = Link::pluck('shorted_link')->toArray();
-        $original_link = Link::pluck('original_link')->where('user_id', Auth::user()->id)->toArray();
+        $original_link = Link::where('user_id', Auth::user()->id)->pluck('original_link')->toArray();
 
         //Digunakan untuk mengecek redudansi Original Link
         if (in_array($request->link['destination'], $original_link)) {
