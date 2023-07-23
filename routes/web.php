@@ -52,7 +52,7 @@ Route::get('/logout', [LogoutController::class, '__invoke'])->name('logout');
 Route::get('/home', [DashboardController::class, 'index'])->name('home');
 
 //Digunakan Untuk Redirect Shortlink ke Original Link
-Route::get('/s/{link}', function (string $link) {
+Route::get('/{link}', function (string $link) {
     $link = Link::where('shorted_link', $link)->get()->first();
     return redirect()->away($link->original_link);
 });
