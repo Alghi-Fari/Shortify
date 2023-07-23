@@ -33,15 +33,15 @@ class LinkController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         // if (isset($request->link['shorted'])) {
         //     $shorted_link = $request->link['shorted'] == '' ? bin2hex(random_bytes(5)) : $request->link['shorted'];
         // } else {
         $shorted_link =  bin2hex(random_bytes(5));
-        
-        
+
+
         $existed_link = Link::pluck('shorted_link')->toArray();
-        $original_link = Link::pluck('original_link')->toArray();
+        $original_link = Link::pluck('original_link')->where('user_id', Auth::user()->id)->toArray();
 
         //Digunakan untuk mengecek redudansi Original Link
         if (in_array($request->link['destination'], $original_link)) {

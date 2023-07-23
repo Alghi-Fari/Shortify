@@ -20,7 +20,7 @@ use App\Http\Controllers\DashboardController;
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/home',[DashboardController::class, 'index'])->name('home');
+    Route::get('/home', [DashboardController::class, 'index'])->name('home');
     Route::group(['middleware' => 'auth', 'as' => 'app.'], function () {
         Route::resource('links', LinkController::class)->names('link');
     });
@@ -52,7 +52,7 @@ Route::get('/logout', [LogoutController::class, '__invoke'])->name('logout');
 Route::get('/home', [DashboardController::class, 'index'])->name('home');
 
 //Digunakan Untuk Redirect Shortlink ke Original Link
-Route::get('/{link}', function (string $link) {
+Route::get('/s/{link}', function (string $link) {
     $link = Link::where('shorted_link', $link)->get()->first();
     return redirect()->away($link->original_link);
 });

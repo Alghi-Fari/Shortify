@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 @extends('templates.admin')
 @section('content')
     <div class="row">
@@ -14,13 +16,14 @@
                                         {{-- <td scope="col" width="5%">{{ $loop->iteration }}</td> nanti ganti menjadi icon --}}
                                         <td scope="col" width="10%">
                                             {{-- <img src="{{asset('storage/image/icon.png')}}" alt="Icon Diamond" width="50" height="50px"> --}}
-                                            <img src="{{ asset('assets/images/icon.png') }}" alt="Icon Diamond" width="50px" height="50px"/>
+                                            <img src="{{ asset('assets/images/icon.png') }}" alt="Icon Diamond"
+                                                width="50px" height="50px" />
                                         </td>
                                         <td>
-                                            <a class='text-primary' href='/{{ $link->shorted_link }}'
-                                                target="_blank">{{env('APP_URL')}}/{{ $link->shorted_link }}</a>
+                                            <a class='text-primary' href='{{ $link->shorted_link }}'
+                                                target="_blank">{{ env('APP_URL') }}{{ $link->shorted_link }}</a>
                                             <br>
-                                            <p>{{$link->original_link}}</p>
+                                            <p>{{ $link->original_link }}</p>
                                             <p>{{ $link->created_at }}</p>
                                         </td>
 
@@ -33,9 +36,10 @@
                                             <a class=" btn btn-outline-danger btn-sm mx-2 bg-danger" id='deleteModalBtn'
                                                 data-url='{{ route('app.link.destroy', $link->id) }}' data-toggle='modal'
                                                 data-id='{{ $link->id }}' data-target='#deleteModal_{{ $link->id }}'
-                                                style='cursor: pointer;' onClick='handleDelete(this)'><i class="fa-regular fa-trash-can text-white"></i></i></a>
+                                                style='cursor: pointer;' onClick='handleDelete(this)'><i
+                                                    class="fa-regular fa-trash-can text-white"></i></i></a>
                                         </td>
-                                    </tr>
+                                        </tr>
                                 @endforeach
                             </tbody>
                         </table>
