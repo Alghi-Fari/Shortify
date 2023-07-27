@@ -28,7 +28,9 @@ class PasswordController extends Controller
             if (($forgot->question == $request->question) && ($forgot->answer == $request->answer)) {
                 session(['user_id' => $user->id]);
                 return redirect()->route('password.new')->with('success', $user->id);
-            }
+            }else {
+            return redirect()->back()->with('error', 'Failed wrong answer or question.');
+        }
         } else {
             return redirect()->back()->with('error', 'Failed wrong answer or question.');
         }
